@@ -1,12 +1,13 @@
 const Product = require("../models/product");
 
-// const mongodb = require("mongodb");
-// const ObjectId = mongodb.ObjectId;
+const mongodb = require("mongodb");
+const ObjectId = mongodb.ObjectId;
 exports.getAddProduct = (req, res, next) => {
   res.render("admin/edit-product", {
     pageTitle: "Add Product",
     path: "/admin/add-product",
     editing: false,
+    isAuthenticated: req.session.isLoggedIn,
   });
 };
 
@@ -20,7 +21,7 @@ exports.postAddProduct = (req, res, next) => {
     price: price,
     description: description,
     imageUrl: imageUrl,
-    userId: req.user._id, //you can simply write req.user and mongoose will pick id object
+    userId: req.session.user._id, //you can simply write req.user and mongoose will pick id object
   });
   product
     .save()
@@ -51,6 +52,7 @@ exports.getEditProduct = (req, res, next) => {
         path: "/admin/edit-product",
         editing: editMode,
         product: products,
+        isAuthenticated: req.session.isLoggedIn,
       });
     })
     .catch((err) => console.log(err));
@@ -87,6 +89,7 @@ exports.getProducts = (req, res, next) => {
         prods: products,
         pageTitle: "Admin Products",
         path: "/admin/products",
+        isAuthenticated: req.session.isLoggedIn,
       });
     })
     .catch((err) => console.log(err));

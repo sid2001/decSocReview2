@@ -25,16 +25,10 @@ const userSchema = new Schema({
   },
 });
 
-// userSchema.methods.addOrder = function () {
-//   const orders = this.cart;
-//   if (this.order.items.length >= 0) {
-//     this.order.items.push(...orders.items);
-//   } else {
-//     this.order = orders;
-//   }
-//   this.cart = {};
-//   return this.save();
-// };
+userSchema.methods.clearCart = function () {
+  this.cart = { items: [] };
+  return this.save();
+};
 
 userSchema.methods.addToCart = function (product) {
   const cartProductIndex = this.cart.items.findIndex((cp) => {
