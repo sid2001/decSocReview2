@@ -1,24 +1,149 @@
 <%- include('../includes/head.ejs') %>
-    <link rel="stylesheet" href="/css/forms.css">
-    <link rel="stylesheet" href="/css/auth.css">
+    <!--<link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">-->
+    <link rel="stylesheet" href="/css/login2.css">
 </head>
 
 <body>
    <%- include('../includes/navigation.ejs') %>
 
     <main>
-        <form class="login-form" action="/login" method="POST">
-            <div class="form-control">
+        <!-- <div id="loginform">
+            <div class="    ">
+        <form id='login' class='input-group-login' action="/login" method="POST">
+            
+            
+        <input type='text'class='input-field'placeholder='Email Id' required >
+        <input type='password'class='input-field'placeholder='Enter Password' required>
+        <input type='checkbox'class='check-box'><span>Remember Me</span>
+        <button type='submit'class='submit-btn'>Log in</button>
+     </form>
+    </div>
+    </div> -->
+
+    <!-- <div class="login-form">
+        <h2>Login</h2>
+        <br>
+        <br>
+
+        <form>
+            <label for="email">Email:</label>
+            <input type='text'class='input-field'placeholder='Email Id'name="email" required >
+            <br>
+            <br>
+            <label for="password">Password:</label>
+            <input type='password'class='input-field'placeholder='Enter Password' name="password" required>
+            <br>
+            <br>
+            <input type='checkbox'class='check-box'><span>Remember Me</span>
+            <br>
+            <br>
+
+            <button type='submit'class='submit-btn' class="btn">Log in</button>
+        </form>
+
+      </div> -->
+
+      <section>
+        <div class="form-box" class="form">
+            <div class="form-value">
+                <form action="" id="loginform" action="/login" method="POST" >
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" name="email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <div class="forget">
+                        <label for=""><input type="checkbox">Remember Me</label>
+
+                    </div>
+                    <button>Log in</button>
+                    <div class="register">
+                        <p class="message">Don't have a account? <a class="change1" href="#">Register</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="register-form" >
+            <form action="/signup" class="register-form opticit" method="POST">
+                  <h2>Register</h2>
+                  <div class="inputbox">
+                      <ion-icon name="mail-outline"></ion-icon>
+                      <input type="email" name='email'required>
+                      <label for="">Email</label>
+                  </div>
+                  <div class="inputbox">
+                      <ion-icon name="lock-closed-outline"></ion-icon>
+                      <input type="password" required name="password">
+                      <label for="">Password</label>
+                  </div>
+                  <div class="inputbox">
+                      <ion-icon name="lock-closed-outline"></ion-icon>
+                      <input type="password" required name="confirmPassword">
+                      <label for="">Confirm Password</label>
+                  </div>
+
+
+              <button>REGISTER</button>
+              <div class="register">
+                  <p class="message">Already Registered? <a class="change" href="#">Login</a></p>
+              </div>
+
+        </form>
+
+        </div>
+        </div>
+    </section>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'>
+        
+    </script>
+    
+
+    <script type="text/javascript">
+
+
+
+
+  $(".change").click(function(){
+    
+    $(".register-form").addClass("opticit");
+    
+    $("#loginform").removeClass("opticit");
+    
+  });
+
+
+$(".change1").click(function() {
+   
+  
+$(".register-form").removeClass("opticit");
+$("#loginform").addClass("opticit");
+
+
+
+// alert("Hello");
+});
+
+
+ </script>
+      
+            <!-- <div class="form-control">
                 <label for="email">E-Mail</label>
                 <input type="email" name="email" id="email">
             </div>
             <div class="form-control">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" >
-            </div>
+                <input type="password" name="password" id="password" > -->
+            <!-- </div> -->
            
 
-            <button class="btn" type="submit">Login</button>
-        </form>
+            <!-- <button class="btn" type="submit">Login</button> -->
+        <!-- </form> -->
     </main>
-<%- include('../includes/end.ejs') %>
+</body>
+</html>

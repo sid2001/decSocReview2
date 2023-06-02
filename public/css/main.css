@@ -34,10 +34,11 @@ form {
 .main-header {
   width: 100%;
   height: 3.5rem;
-  background-color: #00695c;
+  background-color: #21022c;
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
+  
 }
 
 .main-header__nav {
@@ -75,7 +76,7 @@ form {
 .main-header__item a.active,
 .main-header__item button:hover,
 .main-header__item button:active {
-  color: #ffeb3b;
+  color: #79e99c;
 }
 
 .mobile-nav {
@@ -160,6 +161,7 @@ form {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
+  margin-top: 34px;
 }
 
 .card {

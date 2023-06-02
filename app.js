@@ -27,7 +27,7 @@ app.use(
   session({
     secret: "my secret",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: new MongoDBStore({
       uri: MONGODB_URI,
       collection: "sessions",
@@ -57,19 +57,6 @@ app.use(errorController.get404);
 mongoose
   .connect(MONGODB_URI)
   .then((result) => {
-    User.findOne().then((user) => {
-      if (!user) {
-        const user = new User({
-          name: "sisa",
-          email: "sisa@gmail.com",
-          cart: {
-            items: [],
-          },
-        });
-        user.save();
-      }
-    });
-
     app.listen(3000);
   })
   .catch((err) => {

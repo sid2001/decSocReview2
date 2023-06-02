@@ -7,6 +7,7 @@
    <%- include('../includes/navigation.ejs') %>
 
     <main>
+        <div class ='form-product'>
         <form class="product-form" action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
             <div class="form-control">
                 <label for="title">Title</label>
@@ -38,5 +39,6 @@
 
             <button class="btn" type="submit"><% if (editing) { %>Update Product<% } else { %>Add Product<% } %></button>
         </form>
+    </div>
     </main>
 <%- include('../includes/end.ejs') %>
