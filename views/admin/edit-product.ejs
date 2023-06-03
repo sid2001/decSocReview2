@@ -1,5 +1,6 @@
 <%- include('../includes/head.ejs') %>
-    <link rel="stylesheet" href="/css/forms.css">
+    <!-- <link rel="stylesheet" href="/css/forms.css"> -->
+    <link rel="stylesheet" href="/css/add-product.css">
     <link rel="stylesheet" href="/css/product.css">
 </head>
 
@@ -7,38 +8,56 @@
    <%- include('../includes/navigation.ejs') %>
 
     <main>
-        <div class ='form-product'>
-        <form class="product-form" action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
-            <div class="form-control">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
+        <section>
+        <div class ='form-product form-box'>
+        <form class="product-form login-form" action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
+            <!-- <h2>Fill-up the form below</h2>     -->
+            <div class="form-control inputbox">
+                <!-- <label for="title">Title</label> -->
+                <input required placeholder="Title" type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
             </div>
-            <div class="form-control">
-                <label for="imageUrl">Image URL</label>
-                <input type="text" name="imageUrl" id="imageUrl" value="<% if (editing) { %><%= product.imageUrl %><% } %>">
+            <div class="form-control inputbox">
+                <!-- <label for="imageUrl">Image URL</label> -->
+                <input required placeholder="imageUrl" type="text" name="imageUrl" id="imageUrl" value="<% if (editing) { %><%= product.imageUrl %><% } %>">
             </div>
-            <div class="form-control">
-                <label for="price">Price</label>
-                <input type="number" name="price" id="price" step="0.01" value="<% if (editing) { %><%= product.price %><% } %>">
+            <div class="form-control inputbox">
+                <!-- <label for="price">Price</label> -->
+                <input required placeholder="Price" type="number" name="price" id="price" step="0.01" value="<% if (editing) { %><%= product.price %><% } %>">
             </div>
-            <div class="form-control">
+            <div class="form-control shopAddress">
+                <label for="category" >Category</label>
+                <!-- <input type="text" name="category" id="category"  value="<% if (editing) { %><%= product.category %><% } %>"> -->
+                <select id="category" name="category" class="inputbox1" >
+                    <option value="Miscellaneous">Miscellaneous</option>
+                    <option value="Stationery">Stationery</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Mattress">Mattress</option>
+                </select>
+            </div>
+           
+            <div class="form-control shopAddress ">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" rows="5"><% if (editing) { %><%= product.description %><% } %></textarea>
+                <textarea required name="description" id="description" class="inputbox2" rows="5"><% if (editing) { %><%= product.description %><% } %></textarea>
             </div>
-            <div class="form-control">
-                <label for="shopOwner">Shop Owner</label>
-                <input name="shopOwner" id="shopOwner"><% if (editing) { %><%= product.shopOwner %><% } %></input>
+            <div class="form-control inputbox">
+                <!-- <label for="shopOwner">Shop Owner</label> -->
+                <input required placeholder = 'Shop Owner' name="shopOwner" id="shopOwner" value = "<% if (editing) { %><%= product.shopOwner %><% } %>">
             </div>
-            <div class="form-control">
+            <div class="form-control shopAddress" >
                 <label for="shopAddress">Shop Address</label>
-                <textarea name="shopAddress" id="shopAddress" rows="2"><% if (editing) { %><%= product.shopAddress %><% } %></textarea>
+                <textarea required name="shopAddress" id="shopAddress" class="inputbox3" rows="2"><% if (editing) { %><%= product.shopAddress %><% } %></textarea>
             </div>
             <% if (editing) { %>
+
                 <input type="hidden" value="<%= product._id %>" name="productId">
             <% } %>
-
-            <button class="btn" type="submit"><% if (editing) { %>Update Product<% } else { %>Add Product<% } %></button>
+        </div>
+            <div class="register1">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                <button class="btn"  type="submit"><% if (editing) { %>Update Product<% } else { %>Add Product<% } %></button>
+            </div>
         </form>
-    </div>
+   
+</section>
     </main>
 <%- include('../includes/end.ejs') %>

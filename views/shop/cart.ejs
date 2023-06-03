@@ -3,8 +3,13 @@
     </head>
 
     <body>
+        
         <%- include('../includes/navigation.ejs') %>
+       
+        
         <main>
+           <div id="cart"> 
+    
             <% if (products.length > 0) { %>
                 <ul class="cart__item-list">
                     <% products.forEach(p => { %>
@@ -14,19 +19,26 @@
                             <form action="/cart-delete-item" method="POST">
                                 <input type="hidden" value="<%= p.productId._id %>" name="productId">
                                 <button class="btn danger" type="submit">Delete</button>
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                             </form>
                         </li>
                     <% }) %>
                 </ul>
-                <hr>
-                <div class="centered">
-                    <form action="/create-order" method="POST">
-                        <button type="submit" class="btn">Order Now!</button>
-                    </form>
-                </div>
                 
-            <% } else { %>
-                <h1>No Products in Cart!</h1>
-            <% } %>
+                
+                
+            
+                    
+            
+            </div>
+            <div class="order">
+                <form action="/create-order" method="POST">
+                    <button type="submit" class="btn">Order Now!</button>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                </form>
+                <% } else { %>
+                    <h1>No Products in Cart!</h1>
+                <% } %>
+            </div>
         </main>
         <%- include('../includes/end.ejs') %>

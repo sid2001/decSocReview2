@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
+
+:root{
+    /* variables */
+    --green:#27ae60;
+    --dark-color:#219150;
+    --black:#444;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --border-hover:.1rem solid var(var(--black));
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+
+
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; 
+    border: none; 
+    text-decoration: none;
+    text-transform: capitalize;
+    transition:all .1s linear;
+    transition: width none; /* overriding the above transition*/
+   
+    
+}
+
+
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+
+
+.header .header-2 {
+    background-color: rgb(236, 121, 28);
+}
+
+.header .header-2 .navbar{
+    text-align: left;
+
+}
+
+.header .header-2 .navbar a{
+    color: #fff;
+    display: inline-block;
+    padding:  1rem 1.9rem;
+    font-size: 1.7rem;
+}
+.header .header-2 .navbar a.log{
+    float: right; 
+}
+
+.header .header-2 .navbar a:hover{
+    background-color:rgba(0, 0, 0, 0.4);
+
+}
+
+
+.header .header-2.active{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index: 1000; /*element is positioned above other elements on the page*/
+}
+
+
+/* body{
+    height: 500rem; 
+    /* to view how scrolling will look */
+/*}  */
+
+
+.nav_btn{
+    color: rgb(246, 229, 222);
+    /* padding: 0.5rem 1rem; */
+    /* font-weight: bolder; */
+    padding:10px 3px;
+    
+    /* border-radius: 0.9rem; */
+    /* font-size: 0.8rem; */
+    font-size: 20px; 
+    /* font-weight: bolder; */
+    cursor:pointer;  
+    
+    
+}
+
+.btns:hover{
+    scale:1.05;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    transition:  0.5s;
+    color:#fff;
+}
+
+.btns:not(:hover){
+    transition: 0.5s;
+}
+.btns:active{
+    scale: 0.95;
+}
+
+.btns {
+    /* border-style: solid; */
+    border-radius: 30px;
+    border-width: 1px;
+    border-color: #444;
+}
+
+.log{
+    border-radius: 30px;
+    border-width: 1px;
+    border-color: #444;
+
+}
+
+.log:hover{
+    scale:1.05;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    transition:  0.5s;
+    color:#fff;
+}
+
+.log:not(:hover){
+    transition: 0.5s;
+}
+
+.log:active{
+    scale: 0.95;
+}
+
+
+
+
+  

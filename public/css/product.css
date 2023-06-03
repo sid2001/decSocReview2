@@ -1,11 +1,17 @@
 .product-form {
     width: 20rem;
+    /* align-items: center; */
     max-width: 90%;
     margin: auto;
-    display: block;
+     
+    /* display: block;*/
+}
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
 }
 
-.product-item {
+/* .product-item {
     width: 20rem;
     max-width: 95%;
     margin: 1rem;
@@ -24,4 +30,4 @@
 
 .product__description {
     text-align: center;
-}
+} */

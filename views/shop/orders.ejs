@@ -4,10 +4,15 @@
 
     <body>
         <%- include('../includes/navigation.ejs') %>
+
         <main>
+            
             <% if (orders.length <= 0) { %>
-                <h1>Nothing there!</h1>
+                <h1 style="float:right;margin-right:170px;">No Orders created</h1>
+                
             <% } else { %>
+                <div id="order-container">
+                <div class="order-cell">
                 <ul class="orders">
                     <% orders.forEach(order => { %>
                         <li class="orders__item">
@@ -18,8 +23,12 @@
                                 <% }); %>
                             </ul>
                         </li>
+                        
                     <% }); %>
                 </ul>
+                </div>
+            </div>
             <% } %>
+        
         </main>
         <%- include('../includes/end.ejs') %>

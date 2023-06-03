@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="lightslider.css" />
+    <script type="text/javascript" src="java.js"></script>
+    <script type="text/javascript" src="lightslider.js"></script>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="slide">
+      <ul id="autoWidth1" class="cs-hidden1">
+        <% for (let product of prods){ %>
+        <li class="itesm-a">
+          <div class="box">
+            <div class="slide-img">
+              <img src="<%= product.imageUrl %>" alt="Box" />
+              <div class="overlay">
+                <form action="/cart" method="post">
+                  <button class="buy-btn" type="submit">Add to Cart</button>
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <input
+                    type="hidden"
+                    name="productId"
+                    value="<%= product._id %>"
+                  />
+                </form>
+                <!-- <a href="/products/<%= product._id %>" class="buy-btn">Add to Cart</a> -->
+              </div>
+            </div>
+
+            <div class="detail-box">
+              <div class="type">
+                <a href="/products/<%= product._id %>"><%= product.title %></a>
+                <span><%= product.description %></span>
+              </div>
+              <a href="#" class="price">$<%= product.price %></a>
+            </div>
+          </div>
+        </li>
+        <% } %>
+        <!-- <li class="item-b">
+          <div class="box">
+            <div class="slide-img">
+              <img src="2.jpg" alt="Box" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-c">
+          <div class="box">
+            <div class="slide-img">
+              <img src="5.jpg" alt="2" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$20</a>
+            </div>
+          </div>
+        </li>
+        <li class="itefm-d">
+          <div class="box">
+            <div class="slide-img">
+              <img src="3.jpg" alt="3" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="itemw-e">
+          <div class="box">
+            <div class="slide-img">
+              <img src="4.jpg" alt="4" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$50</a>
+            </div>
+          </div>
+        </li> -->
+      </ul>
+      <ul id="autoWidth2" class="cs-hidden2">
+        <li class="item-a">
+          <div class="box">
+            <div class="slide-img">
+              <img src="1.jpg" alt="Box" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-b">
+          <div class="box">
+            <div class="slide-img">
+              <img src="2.jpg" alt="Box" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-c">
+          <div class="box">
+            <div class="slide-img">
+              <img src="5.jpg" alt="2" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$20</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-d">
+          <div class="box">
+            <div class="slide-img">
+              <img src="3.jpg" alt="3" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-e">
+          <div class="box">
+            <div class="slide-img">
+              <img src="4.jpg" alt="4" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$50</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul id="autoWidth3" class="cs-hidden3">
+        <li class="item-a">
+          <div class="box">
+            <div class="slide-img">
+              <img src="1.jpg" alt="Box" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-b">
+          <div class="box">
+            <div class="slide-img">
+              <img src="2.jpg" alt="Box" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-c">
+          <div class="box">
+            <div class="slide-img">
+              <img src="5.jpg" alt="2" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$20</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-d">
+          <div class="box">
+            <div class="slide-img">
+              <img src="3.jpg" alt="3" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-e">
+          <div class="box">
+            <div class="slide-img">
+              <img src="4.jpg" alt="4" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$50</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul id="autoWidth4" class="cs-hidden4">
+        <li class="item-a">
+          <div class="box">
+            <div class="slide-img">
+              <img src="1.jpg" alt="Box" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-b">
+          <div class="box">
+            <div class="slide-img">
+              <img src="2.jpg" alt="Box" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-c">
+          <div class="box">
+            <div class="slide-img">
+              <img src="5.jpg" alt="2" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$20</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-d">
+          <div class="box">
+            <div class="slide-img">
+              <img src="3.jpg" alt="3" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$23</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-e">
+          <div class="box">
+            <div class="slide-img">
+              <img src="4.jpg" alt="4" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Add to Cart</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Rabbed Cardigan</a>
+                <span>Noe Arrival</span>
+              </div>
+              <a href="#" class="price">$50</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>

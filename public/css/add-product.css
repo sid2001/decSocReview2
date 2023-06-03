@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    /* background: url('background6.jpg')no-repeat; */
+    background-image: url(https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bG9naW58ZW58MHx8MHx8fDA%3D&w=1000&q=80);
+    /* background-color: aqua; */
+    background-position: center;
+    background-size: cover;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    width: 100%;
+    margin-bottom: 0px;
+
+    font-family: 'poppins',sans-serif;
+
+}
+.form-product{
+    align-items: center;
+}
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color:rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    margin-top: 10px;
+  
+  
+    overflow: hidden;
+
+}
+h2{
+    font-size: 2em;
+    color: #080808;
+    text-align: center;
+}
+.inputbox{
+    position: relative;
+    margin: 10px 0;
+    width: 310px;
+    border-bottom: 2px solid #2b2828ae;
+}
+.inputbox1{
+    position: relative;
+
+    margin: 10px 0;
+    width: 310px;
+    border-bottom: 0.5px solid #0e0d0d;
+    background-color: rgba(255,255,255,0.5);
+
+}
+::placeholder{
+    color:#0e0d0d;
+}
+.inputbox2{
+    position: relative;
+    margin: 0;
+    width: 310px;
+    /* border-bottom: 2px solid rgb(11, 12, 12); */
+    height: 100px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.5);
+    
+}
+.inputbox3{
+    position: relative;
+    margin: 0;
+    width: 310px;
+    /* border-bottom: 2px solid #fff; */
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255,255,255,0.5);
+}
+.inputbox label{
+    
+    position: relative;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #181717;
+    font-size: 1.15em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: #fff;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+.forget{
+    margin: -15px 0 15px ;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label input{
+    margin-right: 3px;
+
+}
+.forget label a{
+    color: #fff;
+    text-decoration: none;
+}
+.forget label a:hover{
+    text-decoration: underline;
+}
+button{
+   
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.register1{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+    position: absolute;
+    margin-top: 680px;
+}
+.register p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.register1 p a:hover{
+    text-decoration: underline;
+    
+}
+.btn{
+   background-color:antiquewhite;
+}
+.btn:hover {
+    transition: ease-in-out 0.3s;
+}
+.shopAddress {
+    margin-top: 15px;
+}

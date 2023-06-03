@@ -47,7 +47,7 @@
       <section>
         <div class="form-box" class="form">
             <div class="form-value">
-                <form action="" id="loginform" action="/login" method="POST" >
+                <form id="loginform" action="/login" method="POST" >
                     <h2>Login</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
@@ -58,6 +58,7 @@
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="password" name="password" required>
                         <label for="">Password</label>
+                        <!-- <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> -->
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember Me</label>
@@ -67,6 +68,7 @@
                     <div class="register">
                         <p class="message">Don't have a account? <a class="change1" href="#">Register</a></p>
                     </div>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                 </form>
             </div>
             <div class="register-form" >
@@ -85,6 +87,7 @@
                   <div class="inputbox">
                       <ion-icon name="lock-closed-outline"></ion-icon>
                       <input type="password" required name="confirmPassword">
+                      <!-- <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> -->
                       <label for="">Confirm Password</label>
                   </div>
 
@@ -93,6 +96,7 @@
               <div class="register">
                   <p class="message">Already Registered? <a class="change" href="#">Login</a></p>
               </div>
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
 
         </form>
 

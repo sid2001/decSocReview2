@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-image: url('background (1).jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,.9);
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+/* .container img{
+    background-size:cover;
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,.9);
+    background-color: rgba(0, 0, 0, 0.5);
+
+} */
+
+
+a{
+    text-decoration: none;
+    color: #0c0000;
+    font-weight: bold;
+    font-size: 1rem;
+
+}
+
+a:hover{
+    color:aliceblue;
+}
+
+
+
+/* header */
+
+header{
+    position:relative;
+    padding: 0 .01rem;
+}
+
+.shp_btn{
+    /* background-color: #fff; */
+    color: rgb(246, 229, 222);
+    /* padding: 0.5rem 1rem; */
+    /* font-weight: bolder; */
+    padding:10px 3px;
+    border-radius: 0.9rem;
+    /* font-size: 0.8rem; */
+    font-size: 20px; 
+    /* font-weight: bolder; */
+    cursor:pointer;  
+    margin-left: 20px;
+    margin-right: 20px; 
+    /* background-color: rgba(0, 0, 0, 0.5); */
+   
+        
+}
+
+
+.shp_btn:hover{
+    scale:1.05;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    transition:  0.5s;
+    color:#fff;
+    /* box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5); */
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.shp_btn:not(:hover) {
+    transition: 0.3s; 
+}
+
+.shp_btn:active{
+    scale: 0.95;
+}
+
+.navbar{
+    width:100%;
+    height: 60px;
+    max-width: 12000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 1px 3px rgba(0, 0, 0, 0.4);
+
+}
+
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+.action_btn{
+    border-radius: 20px;
+    padding: 12px;
+}
+
+.shp_btn:hover{
+    border-style:solid;
+    border-color: #fff;
+    border-radius: 14px;
+    padding: 12px;
+}
+
+.navbar .toggle_btn{
+    color:#fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+  /* .action_btn {
+    
+  
+    color: black;
+    
+    font-weight: bolder;
+    padding:10px 20px;
+    border-radius: 0.9rem;
+
+    font-size: 20px; 
+    font-weight: bolder;
+    cursor:pointer;   
+    box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.5);
+   
+}   */
+
+/* .action_btn:hover{
+    background-color: black;
+    scale:1.05;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition:  0.5s;
+    color:#fff;
+    
+
+} */
+
+.action_btn:active{
+    scale:0.95;
+}
+.overlay {
+    background: rgba(103, 62, 20, 0.5);
+}
+
+section#her{
+    height: calc(100vh - 60px);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+#her h1{
+    font-size: 7rem;
+}
+
+.message {
+    color: rgb(9, 8, 8);
+}
+
+#her p{
+    font-size: 2rem;
+}

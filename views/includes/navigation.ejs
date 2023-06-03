@@ -1,16 +1,16 @@
 <div class="backdrop"></div>
 <header class="main-header">
-  <button id="side-menu-toggle">Menu</button>
+  <!-- <button id="side-menu-toggle">Menu</button> -->
   <nav class="main-header__nav">
     <ul class="main-header__item-list">
       <li class="main-header__item">
         <a class="<%= path === '/' ? 'active' : '' %>" href="/">Shop</a>
       </li>
-      <li class="main-header__item">
+      <!-- <li class="main-header__item">
         <a class="<%= path === '/products' ? 'active' : '' %>" href="/products"
           >Products</a
         >
-      </li>
+      </li> -->
       <% if (isAuthenticated) { %>
       <li class="main-header__item">
         <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">Cart</a>
@@ -44,14 +44,15 @@
           >Login</a
         >
       </li>
-      <!--<li class="main-header__item">
+      <!-- <li class="main-header__item">
         <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup"
           >Signup</a
-        >-->
-      </li>
+        > -->
+      <!-- </li> -->
       <% } else { %>
       <li class="main-header__item">
         <form action="/logout" method="POST">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           <button type="submit">Logout</button>
         </form>
       </li>
@@ -60,7 +61,7 @@
   </nav>
 </header>
 
-<nav class="mobile-nav">
+<!-- <nav class="mobile-nav">
   <ul class="mobile-nav__item-list">
     <li class="mobile-nav__item">
       <a class="<%= path === '/' ? 'active' : '' %>" href="/">Shop</a>
@@ -93,4 +94,4 @@
       </a>
     </li>
   </ul>
-</nav>
+</nav> -->

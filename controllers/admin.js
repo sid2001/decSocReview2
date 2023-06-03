@@ -17,12 +17,16 @@ exports.postAddProduct = (req, res, next) => {
   const price = req.body.price;
   const description = req.body.description;
   const shopOwner = req.body.shopOwner;
+  const category = req.body.category;
+  const shopAddress = req.body.shopAddress;
   const product = new Product({
     title: title,
     price: price,
     description: description,
     imageUrl: imageUrl,
     shopOwner: shopOwner,
+    category: category,
+    shopAddress: shopAddress,
     userId: req.session.user._id, //you can simply write req.user and mongoose will pick id object
   });
   product
@@ -54,7 +58,6 @@ exports.getEditProduct = (req, res, next) => {
         path: "/admin/edit-product",
         editing: editMode,
         product: products,
-        isAuthenticated: req.session.isLoggedIn,
       });
     })
     .catch((err) => console.log(err));
@@ -66,12 +69,18 @@ exports.postEditProduct = (req, res, next) => {
   const updatedPrice = req.body.price;
   const updatedImageUrl = req.body.imageUrl;
   const updatedDesc = req.body.description;
+  const category = req.body.category;
+  const shopOwner = req.body.shopOwner;
+  const shopAddress = req.body.shopAddress;
   Product.findById(prodId)
     .then((product) => {
       product.title = updatedTitle;
       product.price = updatedPrice;
       product.description = updatedDesc;
       product.imageUrl = updatedImageUrl;
+      product.category = category;
+      product.shopOwner = shopOwner;
+      product.shopAddress = shopAddress;
       return product.save();
     })
     .then((result) => {
@@ -82,7 +91,7 @@ exports.postEditProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-  Product.find()
+  Product.find({ userId: req.session.user._id })
     //.select("title price -_id")
     //.populate("userId", "name")
     .then((products) => {
@@ -91,7 +100,6 @@ exports.getProducts = (req, res, next) => {
         prods: products,
         pageTitle: "Admin Products",
         path: "/admin/products",
-        isAuthenticated: req.session.isLoggedIn,
       });
     })
     .catch((err) => console.log(err));

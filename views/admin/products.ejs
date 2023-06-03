@@ -1,5 +1,6 @@
 <%- include('../includes/head.ejs') %>
-    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/admin-product.css">
+    
     </head>
 
     <body>
@@ -30,7 +31,9 @@
                                     <a href="/admin/edit-product/<%= product._id %>?edit=true" class="btn">Edit</a>
                                     <form action="/admin/delete-product" method="POST">
                                         <input type="hidden" value="<%= product._id %>" name="productId">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                                         <button class="btn" type="submit">Delete</button>
+                                        
                                     </form>
 
                                 </div>
@@ -38,7 +41,9 @@
                             <% } %>
                     </div>
                     <% } else { %>
-                        <h1>No Products Found!</h1>
+                        
+                        <div class="notFoundText"><h1>No Products Found!</h1></div>
+                        
                         <% } %>
             </main>
             <%- include('../includes/end.ejs') %>

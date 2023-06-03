@@ -1,13 +1,15 @@
 <%- include('../includes/head.ejs') %>
-    <link rel="stylesheet" href="/css/product.css">
+    <!-- <link rel="stylesheet" href="/css/product.css"> -->
+    <link rel="stylesheet" href="/ansStyle/style.css">
+    <link rel="stylesheet" href="/ansStyle/lightslider.css">
 </head>
 
 <body>
     <%- include('../includes/navigation.ejs') %>
-
+    <div class="backdrop-overlay">
     <main>
         <% if (prods.length > 0) { %>
-            <div class="grid">
+            <!-- <div class="grid">
                 <% for (let product of prods) { %>
                     <article class="card product-item">
                         <header class="card__header">
@@ -27,9 +29,167 @@
                         </div>
                     </article>
                 <% } %>
+            </div> -->
+            <div class="slide-container">
+            <div id="slide" class="slide-container1" >
+                <div class="category-heading"><header>Stationery</header></div>
+                <div class="category-list">
+                <ul id="autoWidth1" class="cs-hidden1">
+                  <% for (let product of prods){ %>
+                    <% if (product.category==="Stationery"){ %>  
+                  <li class="itesm-a">
+                    <div class="box">
+                      <div class="slide-img">
+                            <img src="<%= product.imageUrl %>" alt="Box" />
+                            <div class="overlay">
+                          <form action="/cart" method="post">
+                            <button class="buy-btn" type="submit">Add to Cart</button>
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                            <input
+                              type="hidden"
+                              name="productId"
+                              value="<%= product._id %>"
+                            />
+                          </form>
+                          <!-- <a href="/products/<%= product._id %>" class="buy-btn">Add to Cart</a> -->
+                            </div>
+                            </div>
+          
+                            <div class="detail-box detail-box-1" >
+                            <div class="type">
+                          <a href="/products/<%= product._id %>"><%= product.title %></a>
+                          <span><%= product.description %></span>
+                            </div>
+                            <a href="#" class="price">$<%= product.price %></a>
+                             </div>
+                            </div>
+                    </li>
+                  <% } %>
+                  <% } %>
+                </ul>
             </div>
+            <div class="category-heading"><header>Transport</header></div>
+            <div class = "category-list">
+                <ul id="autoWidth2" class="cs-hidden2">
+                    <% for (let product of prods){ %>
+                      <% if (product.category==="Transport"){ %>  
+                    <li class="itesm-a">
+                      <div class="box">
+                        <div class="slide-img">
+                          <img src="<%= product.imageUrl %>" alt="Box" />
+                          <div class="overlay">
+                            <form action="/cart" method="post">
+                              <button class="buy-btn" type="submit">Add to Cart</button>
+                              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                              <input
+                                type="hidden"
+                                name="productId"
+                                value="<%= product._id %>"
+                              />
+                            </form>
+                            <!-- <a href="/products/<%= product._id %>" class="buy-btn">Add to Cart</a> -->
+                          </div>
+                        </div>
+            
+                        <div class="detail-box detail-box-2">
+                          <div class="type">
+                            <a href="/products/<%= product._id %>"><%= product.title %></a>
+                            <span><%= product.description %></span>
+                          </div>
+                          <a href="#" class="price">$<%= product.price %></a>
+                        </div>
+                      </div>
+                    </li>
+                    <% } %>
+                    <% } %>
+                  </ul>
+                  </div>
+                  <div class="category-heading" ><header>Mattress</header></div>
+                  <div class="category-list">
+                  <ul id="autoWidth3" class="cs-hidden3">
+                    <% for (let product of prods){ %>
+                      <% if (product.category==="Mattress"){ %>  
+                    <li class="itesm-a">
+                      <div class="box">
+                        <div class="slide-img">
+                    
+                          <img src="<%= product.imageUrl %>" alt="Box" />
+                    
+                          <div class="overlay">
+                            <form action="/cart" method="post">
+                              <button class="buy-btn" type="submit">Add to Cart</button>
+                              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                              <input
+                                type="hidden"
+                                name="productId"
+                                value="<%= product._id %>"
+                              />
+                            </form>
+                            <!-- <a href="/products/<%= product._id %>" class="buy-btn">Add to Cart</a> -->
+                          </div>
+                        </div>
+            
+                        <div class="detail-box detail-box-3">
+                          <div class="type">
+                            <a href="/products/<%= product._id %>"><%= product.title %></a>
+                            <span><%= product.description %></span>
+                          </div>
+                          <a href="#" class="price">$<%= product.price %></a>
+                        </div>
+                      </div>
+                    </li>
+                    <% } %>
+                    <% } %>
+                  </ul>
+                </div>
+                <div class="category-heading"><header>Miscellaneous</header></div>
+                <div class="category-list">
+                  <ul id="autoWidth4" class="cs-hidden4">
+                    <% for (let product of prods){ %>
+                      <% if (product.category==="Miscellaneous"){ %>  
+                    <li class="itesm-a">
+                      <div class="box">
+                        <div class="slide-img">
+                          <img src="<%= product.imageUrl %>" alt="Box" />
+                          <div class="overlay">
+                            <form action="/cart" method="post">
+                              <button class="buy-btn" type="submit">Add to Cart</button>
+                              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                              <input
+                                type="hidden"
+                                name="productId"
+                                value="<%= product._id %>"
+                              />
+                            </form>
+                            <!-- <a href="/products/<%= product._id %>" class="buy-btn">Add to Cart</a> -->
+                          </div>
+                        </div>
+            
+                        <div class="detail-box detail-box-4">
+                          <div class="type">
+                            <a href="/products/<%= product._id %>"><%= product.title %></a>
+                            <span><%= product.description %></span>
+                          </div>
+                          <a href="#" class="price">$<%= product.price %></a>
+                        </div>
+                      </div>
+                    </li>
+                    <% } %>
+                    <% } %>
+                  </ul>
+            </div>
+        </div>
+    </div>
         <% } else { %>
             <h1>No Products Found!</h1>
         <% } %>
+        
     </main>
-<%- include('../includes/end.ejs') %>
+    </div>
+    <script src="/ansStyle/java.js"></script>
+    <script src="/ansStyle/index.js"></script>
+    <script src="/ansStyle/lightslider.js"></script>
+</body>
+
+</html>
+<!-- <%- include('../includes/end.ejs') %> -->

@@ -9,7 +9,7 @@ const orderSchema = new Schema({
       ref: "User",
       required: true,
     },
-    name: { type: String, required: true },
+    // name: { type: String, required: true },
   },
   products: [
     {

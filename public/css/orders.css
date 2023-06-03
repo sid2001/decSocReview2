@@ -1,18 +1,52 @@
-.orders {
+body {
+  background-image: url("/pictures/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 900px 750px;
+  background-position:left ;
+  height: 100%;
+  margin:0em;
+  background-color: antiquewhite;
+}
+
+#order-container {
+  z-index: 2px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 600px;
+  float:right;
+  width: 700px;
+  overflow: auto;
+  height: 675px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-left:0px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.26);
+}
+.orders { 
   list-style: none;
   padding: 0;
   margin: 0;
+  width:100%;
+  padding-top:20px;
 }
 
 .orders__item h1 {
     margin: 0;
     font-size: 1rem;
+    width: 520px;
+    
 }
 
 .orders__item {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
   margin-bottom: 1rem;
+  border-radius: 20px;
+  background-color: rgba(245, 234, 234, 0.752);
+  
 }
 
 .orders__products {
@@ -26,4 +60,12 @@
     padding: 0.5rem;
     border: 1px solid #00695c;
     color: #00695c;
+    border-radius: 5px;
 }
+#order-container::-webkit-scrollbar{
+  display: none;
+   
+ }
+ #order-container::-webkit-scrollbar {
+   display: none; /* For Chrome, Safari, and Opera */
+ }
